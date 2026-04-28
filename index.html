@@ -1,31 +1,59 @@
-# site-renault-site<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <title>Renault</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue chez Renault</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<video autoplay muted loop class="bg-video">
-  <source src="video.mp4" type="video/mp4">
-</video>
+    <video autoplay muted loop id="bg-video">
+        <source src="votre-video-renault-rouge.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+    </video>
 
-<h1>Bienvenue chez Renault</h1>
+    <div class="overlay"></div>
 
-<div class="car" onclick="show('Clio')">Renault Clio</div>
-<div class="car" onclick="show('Megane')">Renault Megane</div>
-<div class="car" onclick="show('Captur')">Renault Captur</div>
+    <header>
+        <h1>Bienvenue chez Renault</h1>
+    </header>
 
-<p id="info"></p>
+    <main class="models-container">
+        <div class="model-card" onclick="showDetails('clio')">
+            <h3>Renault Clio</h3>
+            <p>Citadine</p>
+        </div>
+        <div class="model-card" onclick="showDetails('megane')">
+            <h3>Renault Mégane</h3>
+            <p>Berline</p>
+        </div>
+        <div class="model-card" onclick="showDetails('austral')">
+            <h3>Renault Austral</h3>
+            <p>SUV</p>
+        </div>
+        <div class="model-card" onclick="showDetails('captur')">
+            <h3>Renault Captur</h3>
+            <p>Crossover</p>
+        </div>
+        <div class="model-card" onclick="showDetails('zoe')">
+            <h3>Renault ZOE</h3>
+            <p>Électrique</p>
+        </div>
+    </main>
 
-<div class="contact">
-  📞 0775127765 <br>
-  📧 elabdellaouiibtissam85@gmail.com
-</div>
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Nom du Modèle</h2>
+            <hr>
+            <p><strong>Type:</strong> <span id="modal-type"></span></p>
+            <p><strong>Adresse:</strong> Succursale Renault, Casablanca</p>
+            <p><strong>Email:</strong> contact@renault.ma</p>
+            <p><strong>Nom:</strong> Groupe Renault Maroc</p>
+        </div>
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-<video autoplay muted loop class="bg-video">
-  <source src="renault.mp4" type="video/mp4">
-</video>
